@@ -1,9 +1,10 @@
 //your parameter variables go here!
 let rect_width  = 20;
 let rect_height = 20;
-let center = 150;
-let rectTL = center-50
-
+let cellheight = 300;
+let cellwidth = 300;
+let eyesize = 30; // 30
+let nosesize = 20;
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -11,8 +12,8 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.show_guide(true); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 300;
-  pWallpaper.grid_settings.cell_height = 300;
+  pWallpaper.grid_settings.cell_width  = cellwidth;
+  pWallpaper.grid_settings.cell_height = cellheight;
   pWallpaper.grid_settings.row_offset  = 50;
 }
 
@@ -23,11 +24,41 @@ function wallpaper_background() {
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
   //rect(40 ,40, rect_width, rect_height);
 
+  noStroke();
+  fill(255,255,255);
+  circle(cellwidth / 2, 100, 120);
+  rect(cellwidth / 2 -35, cellheight / 2 -50, 70, 75);
+  triangle(cellwidth / 2 -35, cellheight / 2 +25, cellwidth / 2 +35, cellheight / 2 +25, cellwidth / 2,cellheight / 2 +35);
 
+  fill(0,0,0);
+  rect(cellwidth / 2 +50, 0, 20, 150);
+  rect(cellwidth / 2 -50, 0, -20, 150); // black out the sides
+
+  rect(cellwidth / 2 -50, cellheight / 2 +10, 100, 5); // mouth
+
+
+  drawEyes(150, 110);
+  drawNose(150, 130);
+}
+
+function drawEyes (x, y) {
+
+  fill(0,0,0);
+  circle(x -28, y, eyesize);
+  circle(x +28, y, eyesize); // larger circles
+
+  circle(x -18, y -8, eyesize -15); // smaller circles
+  circle(x +18, y -8, eyesize -15);
+
+  fill(200, 0, 0);
+  circle(x -25, y -2, eyesize -20); // red dots
+  circle(x +25, y -2, eyesize -20);
   
-  circle(center, 100, 150)
-  rect(center-50, center-50, 100, 100)
-  triangle(center-50, 200, center+50, 200, center, 220)
+}
 
+function drawNose (x, y) {
 
+  fill(0,0,0);
+  circle(x, y, nosesize);
+  circle(x, y -10, nosesize -10);
 }
