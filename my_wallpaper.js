@@ -18,11 +18,13 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
+  clear();
   background(0, 0, 0); //light honeydew green colour
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
   //rect(40 ,40, rect_width, rect_height);
+
 
   noStroke();
   fill(255,255,255);
@@ -36,6 +38,11 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   rect(cellwidth / 2 -50, cellheight / 2 +10, 100, 5); // mouth
 
+ 
+
+  if(mouseX > 50){
+    rect(cellwidth / 2 -50, cellheight / 2 +10, 100, 50) // wont work :c
+  }
 
   drawEyes(150, 110);
   drawNose(150, 130);
