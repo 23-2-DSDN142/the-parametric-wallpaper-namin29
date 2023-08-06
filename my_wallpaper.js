@@ -2,13 +2,15 @@ let cellheight = 300; // 300
 let cellwidth = 300; // 300
 let eyesize = 28; // 30
 let nosesize = 18; // 20
-let bonecolor = [255, 255, 255]; // [255, 255, 255]
-let backgroundcolor = [220, 214, 247]; // [0, 0, 0,]
-let accentcolor = [166, 177, 225]; // [150, 50, 50]
-let bonetipsize = 10; // 12
-let eyeHeight = 115
-let noseHeight = 135
-let boneHeight = 120
+let bonecolor = [0, 40, 26]; // [255, 255, 255]
+let backgroundcolor = [224, 204, 178]; // [0, 0, 0,]
+let accentcolor = [191, 78, 48]; // [150, 50, 50]
+let eyeandnosecolor = [230, 230, 200]; // [0, 0, 0,]
+let bonetipsize = 12; // 12
+let eyeHeight = 115; // 115
+let noseHeight = 135; // 135
+let boneHeight = 150; // 120
+let rowoffset = 80; // 0
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -18,7 +20,7 @@ function setup_wallpaper(pWallpaper) {
   //Grid settings
   pWallpaper.grid_settings.cell_width = cellwidth;
   pWallpaper.grid_settings.cell_height = cellheight;
-  pWallpaper.grid_settings.row_offset = 80;
+  pWallpaper.grid_settings.row_offset = rowoffset;
 }
 
 
@@ -32,8 +34,16 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   noStroke();
   fill(accentcolor)
-  circle(cellwidth / 2, boneHeight / 0.7, 120, 120)
-  rect
+  circle(cellwidth / 2, boneHeight / 0.7, 120, 120) // background circle
+  
+  if(rowoffset == 0) {
+  beginShape();
+  vertex(250, 0);
+  vertex(300, 50);
+  vertex(350, 0);
+  vertex(300, -50);
+  endShape();         // if statement for diamond shape
+  }
 
   fill(bonecolor);
   circle(cellwidth / 2, 100, 120);
@@ -44,13 +54,6 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   rect(cellwidth / 2 + 50, 40, 10, 100);
   rect(cellwidth / 2 - 50, 40, -10, 100); // black out the sides
 
-
-  // if () {
-  //   rect(cellwidth / 2 - 50, cellheight / 2 + 10, 100, 50);
-  // } else {
-  //   rect(cellwidth / 2 - 50, cellheight / 2 + 10, 100, 5);
-  // }
-
   drawEyes(150, eyeHeight);
   drawNose(150, noseHeight);
   drawbones(150, boneHeight);
@@ -58,25 +61,31 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
 function drawEyes(x, y) {
 
-  fill(0, 0, 0);
+  fill(eyeandnosecolor);
   circle(x - 28, y, eyesize);
   circle(x + 28, y, eyesize); // larger circles
 
   circle(x - 18, y - 8, eyesize - 15); // smaller circles
   circle(x + 18, y - 8, eyesize - 15);
 
-  fill(accentcolor);
+  fill(bonecolor);
   circle(x - 27, y, eyesize - 10); // eyeball whites
   circle(x + 27, y, eyesize - 10);
 
-  fill(0, 0, 0)
+  fill(eyeandnosecolor)
   circle(x - 29, y - 1, eyesize - 18); // pupil
   circle(x + 28, y + 1, eyesize - 18);
+
+  if(accentcolor[0] === 255 && accentcolor[1] === 0 && accentcolor[2] === 0) {
+    fill(accentcolor);
+    circle(x - 27, y, eyesize - 10); // scary eyes
+    circle(x + 27, y, eyesize - 10);
+  }
 }
 
 function drawNose(x, y) {
 
-  fill(0, 0, 0);
+  fill(eyeandnosecolor);
   circle(x, y, nosesize);
   circle(x, y - 10, nosesize - 10);
 }

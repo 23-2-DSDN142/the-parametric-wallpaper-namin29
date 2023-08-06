@@ -8,14 +8,19 @@ Your final settings.txt will look something like this when you are finished:
 
 Wallpaper 1:
 
-//your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+let cellheight = 300; // 300
+let cellwidth = 300; // 300
+let eyesize = 28; // 30
+let nosesize = 18; // 20
+let bonecolor = [255, 255, 255]; // [255, 255, 255]
+let backgroundcolor = [220, 214, 247]; // [0, 0, 0,]
+let accentcolor = [166, 177, 225]; // [150, 50, 50]
+let eyeandnosecolor = [0, 0, 0]; // [0, 0, 0,]
+let bonetipsize = 10; // 12
+let eyeHeight = 115; // 115
+let noseHeight = 135; // 135
+let boneHeight = 120; // 120
+let rowoffset = 0; // 0
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -23,23 +28,28 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 50;
+  pWallpaper.grid_settings.cell_width = cellwidth;
+  pWallpaper.grid_settings.cell_height = cellheight;
+  pWallpaper.grid_settings.row_offset = rowoffset;
 }
 
 /////////////////////////////////
 
 Wallpaper 2:
 
-//your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+let cellheight = 300; // 300
+let cellwidth = 300; // 300
+let eyesize = 28; // 30
+let nosesize = 18; // 20
+let bonecolor = [0, 40, 26]; // [255, 255, 255]
+let backgroundcolor = [224, 204, 178]; // [0, 0, 0,]
+let accentcolor = [191, 78, 48]; // [150, 50, 50]
+let eyeandnosecolor = [230, 230, 200]; // [0, 0, 0,]
+let bonetipsize = 12; // 12
+let eyeHeight = 115; // 115
+let noseHeight = 135; // 135
+let boneHeight = 150; // 120
+let rowoffset = 80; // 0
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -47,7 +57,11 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
+  pWallpaper.grid_settings.cell_width = cellwidth;
+  pWallpaper.grid_settings.cell_height = cellheight;
+  pWallpaper.grid_settings.row_offset = rowoffset;
 }
+
+/////////////////////////////////
+
+Wallpaper 3:
