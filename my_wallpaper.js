@@ -23,8 +23,7 @@ function wallpaper_background() {
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
   //rect(40 ,40, rect_width, rect_height);
 
-
-  
+  fill(255,255,255)
   circle(center, 100, 150)
   rect(center-50, center-50, 100, 100)
   triangle(center-50, 200, center+50, 200, center, 220)
