@@ -33,6 +33,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   noStroke();
   fill(accentcolor)
   circle(cellwidth / 2, boneHeight / 0.7, 120, 120)
+  rect
 
   fill(bonecolor);
   circle(cellwidth / 2, 100, 120);
