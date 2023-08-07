@@ -1,20 +1,20 @@
 let cellheight = 300; // 300
 let cellwidth = 300; // 300
-let eyesize = 50; // 30
+let eyesize = 30; // 30
 let nosesize = 18; // 20
-let bonecolor = [247, 155, 211]; // [255, 255, 255]
-let backgroundcolor = [26, 40, 154]; // [0, 0, 0,]
-let accentcolor = [255, 0, 0]; // [150, 50, 50]
-let eyeandnosecolor = [36, 20, 104]; // [0, 0, 0,]
-let bonetipsize = 18; // 12
-let eyeHeight = 115; // 115
-let noseHeight = 140; // 135
-let boneHeight = 130; // 120
-let rowoffset = 90; // 0
+let bonecolor = [151, 254, 237]; // [255, 255, 255]
+let backgroundcolor = [53, 162, 159]; // [0, 0, 0,]
+let accentcolor = [11, 102, 106]; // [150, 50, 50]
+let eyeandnosecolor = [7, 25, 82]; // [0, 0, 0,]
+let bonetipsize = 10; // 12
+let eyeHeight = 120; // 115
+let noseHeight = 135; // 135
+let boneHeight = 120; // 120
+let rowoffset = 0; // 0
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GLIDE_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(A3);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
